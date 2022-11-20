@@ -1,0 +1,46 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="assets/logo.svg"/>
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/mostrarTalentos">Mostrar Talentos</a></li>
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Bienvenido Cazador!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Cazador</h2>
+            <a href="/cazadorHome/crearCazador" class="button">Registrate como Cazador</a>
+            <!-- <a href="/editarCazador" class="button">Editar Cazador</a>
+            <a href="/eliminarCazador" class="button">Eliminar cazador</a> -->
+        </div>
+    
+        <div class="section">
+            <h2>Proyectos</h2>
+            <a href="/proyecto/crearProyecto" class="button">Crear Proyecto</a>
+            <a href="/proyecto/mostrarProyectosCazador" class="button">Mostrar Proyecto</a>
+        </div>
+    
+        <div class="section">
+            <h2>Contratos</h2>
+            <a href="/contrato/crearContrato" class="button">Crear Contratos</a>
+            <a href="/contrato/mostrarContratos" class="button">Mostrar Contratos</a>
+        </div>
+        
+        <div class="section">
+            <h2>Citas</h2>
+            <a href="/mostrarTalentos" class="button">Crear Cita</a>
+            <a href="/cita/mostrarCitas" class="button">Consultar Cita</a>
+        </div>
+    </div>
+    
+<%- include('../components/footer') %>

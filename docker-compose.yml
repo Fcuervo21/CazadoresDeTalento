@@ -1,0 +1,23 @@
+version: '3'
+services:
+  client:
+    container_name: cazadores-front
+    stdin_open: true
+    tty: true
+    build: ./
+    ports: 
+      - "3005:3000"
+    volumes:
+      - ./:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  mysql:
+    image: mysql:8
+    volumes:
+      - mysqlEquipo1:/var/lib/mysql
+    ports: 
+      - "3310:3306"
+    env_file:
+      - ./.env
+volumes:
+  mysqlEquipo1:

@@ -1,0 +1,103 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="assets/logo.svg"/>
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Todos los Contratos</h1>
+    </div>
+
+    <div class="container-card">
+        <% for(let i = 0; i < contratos.length; i++) { %>
+            <div class="person-card">
+                <h1>ID Contrato: <%= contratos[i].idContrato %></h1>
+                <h1><%= contratos[i].proyecto %></h1>
+                <p><b>Cazador: </b><%= contratos[i].cazador %></p>
+                <p><b>Talento: </b><%= contratos[i].talento %></p>
+                <p><b>Cuota Acordada: </b>$ <%= contratos[i].cuotaFinal %>.00</p>
+            </div>
+        <% }%>
+    </div>
+
+    <div class="container-edit-delete">
+        <div class="edit-container">
+            <h1>Eliminar Contrato</h1>
+                <form action="/contrato/deleteContrato" method="post" class="form-cita">
+                <label for="">Ingresa ID del contrato:</label>
+                <input type="text" name="idContrato" id="idContrato">
+                
+                <input class='submit-nice' type="submit" value="Eliminar Contrato">
+            </form>
+        </div>
+
+        <div class="edit-container">
+            <h1>Califica a tu cazador</h1>
+            <form class="form-cita" method='post' action="/contrato/rateCazador">
+                <label class="titulo-rate" for="">Selecciona tu cazador:</label>
+                <select type="select" name="idCazador" id="idContrato">
+                    <% for(let i = 0; i < contratos.length; i++) { %>
+                        <option value="<%= contratos[i].cazador %>"><%= contratos[i].cazador %></option>
+                    <% }%>
+                </select>
+                <label for="">Califica a tu cazador</label>
+
+                <div class="rating">
+                    <input id="radio1" type="radio" name="cazadorRating" value="5"><!--
+                    --><label for="radio1">★</label><!--
+                    --><input id="radio2" type="radio" name="cazadorRating" value="4"><!--
+                    --><label for="radio2">★</label><!--
+                    --><input id="radio3" type="radio" name="cazadorRating" value="3"><!--
+                    --><label for="radio3">★</label><!--
+                    --><input id="radio4" type="radio" name="cazadorRating" value="2"><!--
+                    --><label for="radio4">★</label><!--
+                    --><input id="radio5" type="radio" name="cazadorRating" value="1"><!--
+                    --><label for="radio5">★</label>
+                </div>
+                <input class='submit-nice' type="submit" value="Calificar Cazador">
+              </form>
+        </div>
+
+        <div class="edit-container">
+            <h1>Califica a tu talento</h1>
+            <form class="form-cita" method='post' action="/contrato/rateTalento">
+                <label class="titulo-rate" for="">Selecciona tu Talento:</label>
+                <select type="select" name="nombreTalento" id="idContrato">
+                    <% for(let i = 0; i < contratos.length; i++) { %>
+                        <option value="<%= contratos[i].talento %>"><%= contratos[i].talento %></option>
+                    <% }%>
+                </select>
+                
+                <label for="">Califica a tu talento</label>
+
+                <div class="rating-tal">
+                    <input class="tal-in" id="radio-tal-1" type="radio" name="talentoRating" value="5"><!--
+                    --><label class="tal-lab" for="radio-tal-1">★</label><!--
+
+                    --><input class="tal-in" id="radio-tal-2" type="radio" name="talentoRating" value="4"><!--
+                    --><label class="tal-lab" for="radio-tal-2">★</label><!--
+
+                    --><input class="tal-in" id="radio-tal-3" type="radio" name="talentoRating" value="3"><!--
+                    --><label class="tal-lab" for="radio-tal-3">★</label><!--
+
+                    --><input class="tal-in" id="radio-tal-4" type="radio" name="talentoRating" value="2"><!--
+                    --><label class="tal-lab" for="radio-tal-4">★</label><!--
+
+                    --><input class="tal-in" id="radio-tal-5" type="radio" name="talentoRating" value="1"><!--
+                    --><label class="tal-lab" for="radio-tal-5">★</label>
+                </div>
+                <input class='submit-nice' type="submit" value="Calificar Talento">
+            <form />
+        </div>
+        
+    </div>
+
+<%- include('../components/footer') %>

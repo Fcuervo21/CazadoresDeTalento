@@ -1,0 +1,49 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="../assets/logo.svg" />
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Consultar Proyecto</h1>
+    </div>
+
+    <div class="container-card">
+        <% for(let i = 0; i < proyectos.length; i++) { %>
+            <div class="person-card">
+                <h1>ID Proyecto: <%= proyectos[i].idProyecto %></h1>
+                <h1><%= proyectos[i].nombre %></h1>
+                <p><b>Descripcion:</b> <%= proyectos[i].descripcion %></p>
+                <p><b>Habilidad Requerida:</b> <%= proyectos[i].habilidad %></p>
+                <p><b>Cuotas:</b> $ <%= proyectos[i].cuotas %>.00</p>
+                <p><b>Cazador:</b> <%= proyectos[i].alias %></p>
+                <p><b>Giro del Proyecto:</b> <%= proyectos[i].giroDeProyecto %></p>
+                <p><b>Reputacion Cazador:</b> <%= proyectos[i].promedioReputacion %>/5 ⭐️</p>
+            </div>
+        <% }%>
+    </div>
+
+    <div class="container-cita">
+        <h1>Solicitar cita</h1>
+        <form action="/cita/crearCitaTalentoCazador" method="post" class="form-cita">
+            <label for="">Ingresa tu ID de talento</label>
+            <input type="text" name="idTalento" id="idTalento">
+            <label for="">Ingresa el ID del proyecto</label>
+            <input type="text" name="idProyecto" id="idProyecto">
+            <label for="">Ingresa la fecha y hora de la cita</label>
+            <input type="datetime-local" name="fechaHora" id="fechaHora">
+            <label for="">Ingresa el lugar de la cita</label>
+            <input type="text" name="lugar" id="lugar">
+            <input class='submit-nice' type="submit" value="Solicitar cita">
+
+        </form>
+    </div>
+<%- include('../components/footer') %>

@@ -1,0 +1,49 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="../assets/logo.svg" />
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Editar Proyecto</h1>
+    </div>
+
+    <div class="container-form">
+        <form class="form-general">
+            <label for="proyecto">Proyecto a editar:</label>
+            <select
+                name="proyecto"
+                id="proyecto"
+            >
+            </select>
+            <p></p>
+
+            <div id="changing">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" />
+
+                <label for="descripción">Descripción</label>
+                <textarea
+                    name="descripción"
+                    id="descripción"
+                    cols="30"
+                    rows="10"
+                ></textarea>
+
+                <label for="cuota">Cuota</label>
+                <input type="number" name="cuota" id="cuota" />
+            </div>
+            <input
+                type="submit"
+                value="Actualizar"
+            />
+        </form>
+    </div>
+    <%- include('../components/footer') %>

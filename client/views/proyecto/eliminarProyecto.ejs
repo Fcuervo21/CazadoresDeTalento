@@ -1,0 +1,31 @@
+<%- include('../components/header') %>
+
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="../assets/logo.svg" />
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Eliminar Proyecto</h1>
+    </div>
+
+    <div class="container-form">
+        <form class="form-general">
+            <label for="proyecto">Proyecto a eliminar:</label>
+            <select name="proyecto" id="proyecto" multiple></select>
+            <input
+                type="submit"
+                value="Eliminar proyecto"
+            />
+        </form>
+    </div>
+
+<%- include('../components/footer') %>

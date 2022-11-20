@@ -1,0 +1,45 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="assets/logo.svg"/>
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Crear Contrato</h1>
+    </div>
+
+    <div class="container-form">
+        <form action="/contrato/crearContrato" class="form-general" method="post">
+            <label for="alias">Seleccionar proyecto y cazador</label>
+            <select name="idProyecto" id="proyecto">
+                <option value="">--Selecciona una opcion--</option>
+                <% for(let i = 0; i < proyectos.length; i++) { %>
+                    <option value="<%= proyectos[i].idProyecto %>"><%= proyectos[i].nombre %> | Cazador: <%= proyectos[i].alias %></option>
+                <% } %>
+            </select>
+
+            <label for="alias">Seleccionar Talento</label>
+            <select name="idTalento" id="proyecto">
+                <option value="">--Selecciona una opcion--</option>
+                <% for(let i = 0; i < talentos.length; i++) { %>
+                    <option value="<%= talentos[i].idTalento %>"><%= talentos[i].alias %></option>
+                <% } %>
+            </select>
+
+            <label for="">Ingresa cuota final:</label>
+            <input type="number" name="cuotaFinal" id="cuotaFinal">
+            
+
+            <input type="submit" value="Crear Contrato">
+        </form>
+    </div>
+
+    <%- include('../components/footer') %>

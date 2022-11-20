@@ -1,0 +1,48 @@
+
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="assets/logo.svg"/>
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Bienvenido Talento!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Talento</h2>
+            <a href="/talentoHome/crearTalento" class="button">Registrate como talento</a>
+            <!-- <a href="talento/editarTalento.html" class="button">Editar Talento</a>
+            <a href="talento/eliminarTalento.html" class="button">Eliminar Talento</a> -->
+        </div>
+
+        <div class="section">
+            <h2>Proyectos</h2>
+            <a href="/proyecto/mostrarProyectos" class="button">Ver Proyectos</a>
+            <!-- <a href="talento/editarTalento.html" class="button">Editar Talento</a>
+            <a href="talento/eliminarTalento.html" class="button">Eliminar Talento</a> -->
+        </div>
+    
+        <div class="section">
+            <h2>Contrato</h2>
+            <a href="/contrato/mostrarContratos" class="button">Consultar Contrato</a>
+        </div>
+    
+        <div class="section">
+            <h2>Citas</h2>
+            <a href="/proyecto/mostrarProyectos" class="button">Crear Cita</a>
+            <a href="/cita/mostrarCitas" class="button">Mostrar Cita</a>
+
+        </div>
+        
+    </div>
+    
+<%- include('../components/footer') %>

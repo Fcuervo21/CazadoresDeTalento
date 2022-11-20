@@ -1,0 +1,56 @@
+<%- include('../components/header') %>
+        <header>
+            <div class="full-logo">
+                <img class="logo" src="assets/logo.svg" />
+                <h3 class="title">Cazadores de Talento</h3>
+            </div>
+            <nav>
+                <ul class="nav__links">
+
+                </ul>
+            </nav>
+            <a class="home" href="/"><button>Home</button></a>
+        </header>
+
+        <div class="title-instruction">
+            <h1>Consultar cita</h1>
+        </div>
+
+        <div class="container-card">
+            <% for(let i = 0; i < citas.length; i++) { %>
+                <div class="person-card">
+                    <h1>ID Cita: <%= citas[i].idCita %></h1>
+                    <h2><%= citas[i].proyecto %></h2>
+                    <p>Talento: <%= citas[i].talento %></p>
+                    <p>Cazador: <%= citas[i].cazador %></p>
+                    <p>Lugar: <%= citas[i].lugar %></p>
+                    <p>Fecha y Hora: <%= citas[i].fechaHora %></p>
+                </div>
+            <% } %>
+        
+        </div>
+
+        <div class="container-edit-delete">
+            <div class="edit-container">
+                <h1>Editar Cita</h1>
+                <form action="/cita/updateCita" method="post" class="form-cita">
+                    <label for="">Ingresa ID de la cita a modificar</label>
+                    <input type="text" name="idCita" id="idCita">
+                    <label for="">Ingresa nueva fecha y hora de la cita</label>
+                    <input type="datetime-local" name="fechaHora" id="fechaHora">
+                    <label for="">Ingresa nuevo lugar de la cita</label>
+                    <input type="text" name="lugar" id="lugar">
+                    <input class='submit-nice' type="submit" value="Editar cita">
+                </form>
+            </div>
+
+            <div class="edit-container">
+                <h1>Eliminar Cita</h1>
+                <form action="/cita/deleteCita" method="post" class="form-cita">
+                    <label for="">Ingresa ID de la cita a eliminar</label>
+                    <input type="text" name="idCita" id="idCita">
+                    <input class='submit-nice' type="submit" value="Eliminar cita">
+                </form>
+            </div>
+        </div>
+<%- include('../components/footer') %>

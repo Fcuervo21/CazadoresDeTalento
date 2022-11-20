@@ -1,0 +1,52 @@
+<%- include('../components/header') %>
+    <header>
+        <div class="full-logo">
+            <img class="logo" src="../assets/logo.svg" />
+            <h3 class="title">Cazadores de Talento</h3>
+        </div>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="home.html">Buscar Cazador</a></li>
+                <li><a href="about.html">Buscar Talento</a></li>
+            </ul>
+        </nav>
+        <a class="home" href="/"><button>Home</button></a>
+    </header>
+
+    <div class="title-instruction">
+        <h1>Crear talento</h1>
+    </div>
+
+    <div class="container-form">
+        <form class="form-general" method="post">
+            <label for="alias">Alias</label>
+            <input type="text" name="alias" id="alias" />
+            <label for="actividad_profesional">Actividad Profesional</label>
+            <input
+                type="text"
+                name="actividad_profesional"
+                id="actividad_profesional"
+            />
+            <label for="horario">Horario</label>
+            <input type="text" name="horario" id="horario" />
+            <label for="lugar">Lugar</label>
+            <input type="text" name="lugar" id="lugar" />
+            <label for="costo">Costo</label>
+            <input type="number" name="costo" id="costo" />
+            <label for="habilidad">Habilidades</label>
+            <select name="habilidad" id="habilidad">
+                <option value="">--Selecciona una opcion--</option>
+                <option value="1">HTML</option>
+                <option value="2">CSS</option>
+                <option value="3">JavaScript</option>
+                <option value="4">Fullstack</option>
+                <option value="5">Data Scientist</option>
+                <option value="6">React</option>
+                <option value="7">MongoDB</option>
+                <option value="8">MySQL</option>
+            </select>
+
+            <input type="submit" value="Crear talento">
+        </form>
+    </div>
+<%- include('../components/header') %>
